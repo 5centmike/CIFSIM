@@ -5,7 +5,7 @@ To enable comparison across cell types and experiments we first binned all epige
 
 We model the compartmentalization of the genome as the independent contributions of individual 1D epigenetic signals and use a machine learning method Maximum Likelihood Estimation (MLE) to learn the relationship between the signals and interaction frequencies in the Hi-C map. In this way we hope to quantify the nuclear forces driving compartmentalization. Our model treats each epigenetic signal as an independent but additive effect on Hi-C interaction frequency according to the equation:
 
-
+![alt text](https://github.com/5centmike/CIFSIM/Esignals.png?raw=true)
 
 Where the expected interaction frequency E between any two genomic loci i and j is the sum of each signal’s weight effect. Using MLE we find the optimal values of each signal’s weights such that the expected result E is as close to the observed value as possible. This produces a trained model that can reproduce the 3D organization of the genome from 1D epigenetic signals by quantifying the expected contributions of each correlated compartmentalizing force.
 
