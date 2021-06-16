@@ -1,6 +1,8 @@
 # CIFSIM
 Compartmentalization by Independent Forces to Simulate Interaction Maps (CIFSIM)
 
+This is a machine learning method which models the interactions of chromatin polymers as a function of attraction or repulsion between their chromatin features. The model takes one-dimensional vectors representing features along the chromosomes and two-dimensional matrices representing interaction frequencies and learns the average attraction or repulsion amongst each chromatin feature to then reproduce the interaction frequency maps using only the vectors.
+
 To enable comparison across cell types and experiments we first binned all epigenetic signals into quantiles at a 100 kb resolution. For each normalized signal, we then learned, using a Maximum Likelihood Estimation approach, an attraction-repulsion relationship for each pair of quantiles. This attraction-repulsion mapping effectively represents the average enrichment or depletion between all bins with the corresponding level of signal. The model then predicts the number of reads at each bin by summing the attraction-repulsion scores for each signal and multiplying by a constant distance factor to account for the power law decay of genomic interactions. 
 
 We model the compartmentalization of the genome as the independent contributions of individual 1D epigenetic signals and use a machine learning method Maximum Likelihood Estimation (MLE) to learn the relationship between the signals and interaction frequencies in the Hi-C map. In this way we hope to quantify the nuclear forces driving compartmentalization. Our model treats each epigenetic signal as an independent but additive effect on Hi-C interaction frequency according to the equation:
